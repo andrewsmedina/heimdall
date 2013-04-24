@@ -1,5 +1,11 @@
 package monitoring
 
+// Alarm represents an alarm.
+type Alarm struct{}
+
+// Metric represents a metric.
+type Metric struct{}
+
 // Monitor is the basic interface of this package.
 type Monitor interface {
 	// AddAlarm adds a new alarm.
@@ -9,8 +15,8 @@ type Monitor interface {
 	DeleteAlarm() error
 
 	// ListAlarms lists alarms.
-	ListAlarms()
+	ListAlarms() []Alarm
 
 	// ListMetrics list metrics.
-	ListMetrics()
+	ListMetrics() []Metric
 }
